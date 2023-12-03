@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import useCartStore from "../../stores/cart";
 import ToggleBtn from "./ToggleBtn.vue";
-import MainDialog from "./MainDialog.vue";
+import CartModal from "./CartModal.vue";
 
 const cartStore = useCartStore();
 const toggleCart = ref(false);
@@ -15,7 +15,7 @@ const toggleCart = ref(false);
       :total-items="cartStore.totalItems"
       class="text-lg"
     />
-    <MainDialog
+    <CartModal
       :total-cost="cartStore.totalCost"
       :toggleCart="toggleCart"
       @closeCart="toggleCart = false"

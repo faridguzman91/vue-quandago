@@ -40,8 +40,11 @@ const toggleSidebarAndNav = (destination: string) => {
     <div class="position-layout-fix">
       <nav>
         <ul class="text-sm capitalize text-primary">
-          <li>
-            <button @click="toggleSidebarAndNav('/')">Home</button>
+          <li >
+            <button class="flex flex-row items-center" @click="toggleSidebarAndNav('/')">
+              <font-awesome-icon :icon="['fas', 'house']" />
+              <p class="ml-6">Home</p>
+            </button>
           </li>
         </ul>
       </nav>

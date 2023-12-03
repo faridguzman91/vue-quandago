@@ -8,6 +8,7 @@ import {
   faCartShopping,
   faMinus,
   faBagShopping,
+  faHouse
 } from "@fortawesome/free-solid-svg-icons";
 
 const faIcons = library.add(
@@ -19,6 +20,7 @@ const faIcons = library.add(
   faCartShopping,
   faMinus,
   faBagShopping,
+  faHouse
 );
 
 export default faIcons;

@@ -1,7 +1,6 @@
 <script setup>
 import BtnIconRounded from "../Common/BtnIconRounded.vue";
 import Tabs from "./Tabs.vue";
-
 defineProps(["toggleCart", "totalCost"]);
 const emits = defineEmits(["closeCart"]);
 </script>

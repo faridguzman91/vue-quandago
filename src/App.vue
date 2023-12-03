@@ -1,5 +1,5 @@
 <script setup>
-import Nav from "./layouts/Nav.vue";
+import Navbar from "./layouts/Navbar.vue";
 </script>
 
 <template>
@@ -7,7 +7,7 @@ import Nav from "./layouts/Nav.vue";
     id="app-layout"
     class="mx-auto grid h-full max-w-bd-md grid-rows-bd-base"
   >
-    <Nav />
+    <Navbar />
     <main class="h-full overflow-hidden">
       <div
         id="main-content-layout"
