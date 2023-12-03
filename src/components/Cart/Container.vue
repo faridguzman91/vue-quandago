@@ -1,6 +1,5 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
-
 import useCartStore from "../../stores/cart";
 import ToggleBtn from "./ToggleBtn.vue";
 import MainDialog from "./MainDialog.vue";
@@ -10,7 +9,7 @@ const toggleCart = ref(false);
 </script>
 
 <template>
-  <div class="sticky right-100 bottom-0 z-10 p-4 pb-20 text-md">
+  <div class="sticky flex flex-row justify-end bottom-0 z-10 p-4 pb-20">
     <ToggleBtn
       @click="toggleCart = true"
       :total-items="cartStore.totalItems"
@@ -24,4 +23,3 @@ const toggleCart = ref(false);
   </div>
 </template>
 
-<style lang="scss"></style>

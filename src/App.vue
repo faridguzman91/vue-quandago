@@ -1,5 +1,4 @@
 <script setup>
-// layouts
 import Nav from "./layouts/Nav.vue";
 </script>
 

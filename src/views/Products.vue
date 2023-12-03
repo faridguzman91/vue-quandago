@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref, onBeforeMount, onBeforeUnmount, onMounted } from "vue";
 import { themeChange } from "theme-change";
 import useBDaFetch from "../includes/bdFetch";
@@ -12,10 +12,8 @@ const productsStore = useProductsStore();
 const productsList = ref();
 const searchTxt = ref("");
 const url = ref(
-  `products/search?q=${searchTxt.value}&limit=${
-    productsStore.products.limitPerPage
-  }&skip=${
-    productsStore.products.currentPageNum * productsStore.products.limitPerPage
+  `products/search?q=${searchTxt.value}&limit=${productsStore.products.limitPerPage
+  }&skip=${productsStore.products.currentPageNum * productsStore.products.limitPerPage
   }`,
 );
 
@@ -33,14 +31,12 @@ const { isFetching, execute } = useBDaFetch(
   },
 );
 
-const searching = (txt) => {
+const searching = (txt: string) => {
   productsStore.resetProducts();
   searchTxt.value = txt;
-  url.value = `products/search?q=${searchTxt.value}&limit=${
-    productsStore.products.limitPerPage
-  }&skip=${
-    productsStore.products.currentPageNum * productsStore.products.limitPerPage
-  }`;
+  url.value = `products/search?q=${searchTxt.value}&limit=${productsStore.products.limitPerPage
+    }&skip=${productsStore.products.currentPageNum * productsStore.products.limitPerPage
+    }`;
   execute();
 };
 
@@ -57,41 +53,29 @@ useSimpleBar({
   callback: () => {
     if (isFetching.value || !productsStore.products.hasMore) return;
 
-    url.value = `products/search?q=${searchTxt.value}&limit=${
+    url.value = `products/search?q=${searchTxt.value}&limit=${productsStore.products.limitPerPage
+      }&skip=${productsStore.products.currentPageNum *
       productsStore.products.limitPerPage
-    }&skip=${
-      productsStore.products.currentPageNum *
-      productsStore.products.limitPerPage
-    }`;
+      }`;
     execute();
   },
 });
 </script>
 
 <template>
-  <div
-    class="max-w-bd-md mx-auto relative py-2 px-6 h-full w-full grid items-center overflow-auto"
-    ref="productsList"
-  >
+  <div class="max-w-bd-md mx-auto relative py-2 px-6 h-full w-full grid items-center overflow-auto" ref="productsList">
     <SearchInput
       class="w-full p-2 border-2 border-primary dark:border-primary-dark rounded-xl text-sm text-secondary dark:text-white placeholder:text-secondary dark:placeholder:text-white bg-primary-bg dark:bg-primary-bg-dark self-end"
-      @searching="searching($event)"
-    />
+      @searching="searching($event)" />
     <ul class="h-full w-full flex flex-col justify-start items-center">
-      <ListItem
-        v-for="product of productsStore.products.items"
-        :key="product.id"
-        :product="product"
-      />
+      <ListItem v-for="product of productsStore.products.items" :key="product.id" :product="product" />
       <li v-if="isFetching && productsStore.products.hasMore">
         <div id="spinner-box" class="overflow-hidden mt-4 text-lg">
           <span className="loading loading-bars loading-lg"></span>
         </div>
       </li>
-      <li
-        class="text-xs text-secondary dark:text-white font-ssp font-bold mt-4"
-        v-else-if="!isFetching && productsStore.products.items.length === 0"
-      >
+      <li class="text-xs text-secondary dark:text-white font-ssp font-bold mt-4"
+        v-else-if="!isFetching && productsStore.products.items.length === 0">
         Nothing found.. please try again
       </li>
     </ul>

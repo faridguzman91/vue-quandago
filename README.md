@@ -10,3 +10,12 @@
 <li>Shopping Cart</li>
 <li>Check total amount</li>
 </ul>
+
+#installation
+
+make sure you got node.js and npm installed on your pc, unzip or clone into folder, cd into folder and run 
+in a terminal:
+
+```
+npm i && npm run dev
+```

@@ -1,3 +1,4 @@
+// @ts-ignore
 import { createApp } from "vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import router from "./includes/routes";
