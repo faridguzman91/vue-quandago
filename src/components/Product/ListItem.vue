@@ -18,11 +18,9 @@ const cartStore = useCartStore();
       </div>
       <div class="flex justify-end">
         <BtnIconRounded @click="cartStore.addItem(product)">
-           <font-awesome-icon :icon="['fas', 'plus']" />
+          <font-awesome-icon :icon="['fas', 'plus']" />
         </BtnIconRounded>
       </div>
     </div>
   </li>
 </template>
-
-

@@ -3,7 +3,9 @@ defineProps(["label", "icon", "size"]);
 </script>
 
 <template>
-  <button :label="label" :icon="icon" class="flat font-ssp" :class="[size]" />
+  <button class="btn outlined text-md h-full p-4">
+    <slot></slot>
+  </button>
 </template>
 
 <style lang="scss"></style>

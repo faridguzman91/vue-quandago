@@ -6,28 +6,18 @@ module.exports = {
     themes: [
       {
         lightTheme: {
-          "primary": "#0094ff",
-          "secondary": "#008e00",
-          "accent": "#008c00",
-          "neutral": "#050806",
+          primary: "#363636",
+          secondary: "#446dab",
+          neutral: "#050806",
           "base-100": "#ffffff",
-          "info": "#006cc1",
-          "success": "#72b100",
-          "warning": "#ffa700",
-          "error": "#ce0033",
         },
         darkTheme: {
-          "primary": "#ec00ff",
-          "secondary": "#00f600",
-          "accent": "#ad8c00",
-          "neutral": "#0e0821",
+          primary: "#f2f2f2",
+          secondary: "#c8d5e8",
+          neutral: "#0e0821",
           "base-100": "#172632",
-          "info": "#0064fc",
-          "success": "#00cd6e",
-          "warning": "#c54200",
-          "error": "#f25776",
-        }
-      }
+        },
+      },
     ],
   },
   theme: {
@@ -41,7 +31,6 @@ module.exports = {
         xxl: "6rem",
       },
       maxWidth: {
-
         "bd-xs": "32rem",
         "bd-sm": "48rem",
         "bd-md": "76.8rem",
@@ -50,13 +39,7 @@ module.exports = {
       gridTemplateRows: {
         "bd-base": "auto 1fr",
       },
-      boxShadow: {
-        base: "0 0.4rem 0.4rem  #000001",
-        "base-dark": "0 0 0.6rem 0 white",
-      },
     },
   },
-  plugins: [
-    require("daisyui")
-  ],
+  plugins: [require("daisyui")],
 };

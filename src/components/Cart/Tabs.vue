@@ -13,7 +13,10 @@ const changeTab = (name) => {
   tabName.value = name;
 };
 </script>
+
 <template>
-  <component :is="tabs[tabName]" @changeTab="changeTab" />
+  <div class="w-full flex-col">
+    <component :is="tabs[tabName]" @changeTab="changeTab" />
+  </div>
 </template>
 <style></style>

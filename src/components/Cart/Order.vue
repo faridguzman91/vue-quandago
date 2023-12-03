@@ -4,11 +4,10 @@ const emits = defineEmits(["changeTab"]);
 </script>
 <template>
   <div class="h-full flex flex-col justify-center items-center">
-    <h1
-      class="text-lg text-secondary dark:text-white font-ssp font-bold capitalize"
-    ></h1>
+    <span className="loading loading-bars loading-lg"></span>
+    <p class="text-lg">Processing order...</p>
     <div class="mt-8">
-      <Btn :label="cart - list" size="sm" @click="emits('changeTab', 'list')" />
+      <Btn @click="emits('changeTab', 'list')"> Cancel </Btn>
     </div>
   </div>
 </template>

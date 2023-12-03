@@ -1,12 +1,13 @@
 import { ref } from "vue";
 import { defineStore } from "pinia";
+import type { ICartItem } from "./types";
 
 export default defineStore("cart", () => {
-  const items = ref([]);
-  const totalItems = ref(0);
-  const totalCost = ref(0);
+  const items = ref<ICartItem[]>([]);
+  const totalItems = ref<number>(0);
+  const totalCost = ref<number>(0);
 
-  const addItem = (item) => {
+  const addItem = (item: ICartItem) => {
     let targetItem = items.value.filter(
       (currItem) => currItem.id === item.id,
     )[0];
@@ -18,7 +19,7 @@ export default defineStore("cart", () => {
     totalCost.value += item.price;
   };
 
-  const removeItem = (item) => {
+  const removeItem = (item: ICartItem) => {
     let targetItem = items.value.filter(
       (currItem) => currItem.id === item.id,
     )[0];

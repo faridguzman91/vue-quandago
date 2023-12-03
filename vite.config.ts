@@ -8,13 +8,11 @@ export default defineConfig({
     port: 5173,
   },
   resolve: {
-    alias: {
-    },
+    alias: {},
   },
   css: {
     preprocessorOptions: {
-      scss: {
-      },
+      scss: {},
     },
   },
 });

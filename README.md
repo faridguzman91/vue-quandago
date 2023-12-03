@@ -1,4 +1,5 @@
 # vue-quandago
+
 <ul>
 <li>Using Vue3 and vue-router</li>
 <li>Pinia as state manager</li>
@@ -9,5 +10,3 @@
 <li>Shopping Cart</li>
 <li>Check total amount</li>
 </ul>
-# vue-quandago
-# vue-quandago

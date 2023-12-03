@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html,
 body,
 #app {
@@ -13,4 +12,13 @@ html {
   font-size: 62.5%;
 }
 
+#pv_id_1_badge {
+  font-size: 2rem !important;
+  padding: 4px;
+  height: 25px;
+  width: 25px;
+}
 
+.p-dialog {
+  background: inherit !important;
+}

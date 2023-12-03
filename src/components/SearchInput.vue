@@ -7,7 +7,10 @@ const debouncedSearch = useDebounceFn((value) => {
 </script>
 
 <template>
-  <input type="text" class="input input-bordered w-full h-full p-4" placeholder="Search items"
-    @input="debouncedSearch($event.target.value)" />
+  <input
+    type="text"
+    class="input input-bordered w-full h-full p-4"
+    placeholder="Search items"
+    @input="debouncedSearch($event.target.value)"
+  />
 </template>
-
