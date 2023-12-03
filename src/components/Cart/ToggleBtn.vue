@@ -6,7 +6,7 @@ const cartRef = ref(null);
 </script>
 
 <template>
-  <div class="flex flex-row w-28 cursor-pointer text-lg" ref="cartRef">
+  <div class="flex w-28 cursor-pointer flex-row text-lg" ref="cartRef">
     <Badge :value="totalItems" size="large" class="text-md">
       <font-awesome-icon :icon="['fas', 'cart-shopping']" />
     </Badge>

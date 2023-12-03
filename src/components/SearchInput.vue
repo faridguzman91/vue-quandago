@@ -9,8 +9,8 @@ const debouncedSearch = useDebounceFn((value) => {
 <template>
   <input
     type="text"
-    class="input input-bordered w-full h-full p-4"
-    placeholder="Search items"
+    class="input input-bordered h-full w-full p-4 text-primary"
+    placeholder="Search for product..."
     @input="debouncedSearch($event.target.value)"
   />
 </template>

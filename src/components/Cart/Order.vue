@@ -3,7 +3,7 @@ import Btn from "../Common/Btn.vue";
 const emits = defineEmits(["changeTab"]);
 </script>
 <template>
-  <div class="h-full flex flex-col justify-center items-center">
+  <div class="flex h-full flex-col items-center justify-center">
     <span className="loading loading-bars loading-lg"></span>
     <p class="text-lg">Processing order...</p>
     <div class="mt-8">

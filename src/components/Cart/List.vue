@@ -16,13 +16,13 @@ useSimpleBar({ elementRef: cartList });
   <div
     id="list-box"
     ref="cartList"
-    class="w-full h-full max-w-bd-sm mx-auto relative overflow-auto"
+    class="relative mx-auto h-full w-full max-w-bd-sm overflow-auto"
   >
     <div
       v-if="cartStore.items.length > 0"
-      class="max-w-bd-sm mx-auto pb-8 px-4 fixed z-10 bg-white dark:bg-primary-bg-dark"
+      class="dark:bg-primary-bg-dark fixed z-10 mx-auto max-w-bd-sm bg-white px-4 pb-8"
     >
-      <Btn :label="Cart" size="sm" @click="emits('changeTab', 'order')">
+      <Btn size="sm" @click="emits('changeTab', 'order')">
         <font-awesome-icon :icon="['fas', 'bag-shopping']" />
       </Btn>
     </div>
@@ -30,12 +30,12 @@ useSimpleBar({ elementRef: cartList });
       <li
         v-for="item of cartStore.items"
         :key="item.id"
-        class="mt-8 flex flex-col justify-between items-start"
+        class="mt-8 flex flex-col items-start justify-between"
       >
-        <div class="text-sm font-mont font-bold">
+        <div class="font-mont text-sm font-bold">
           {{ item.title }}
         </div>
-        <div class="text-xs flex">
+        <div class="flex text-xs">
           <span>{{ item.count }}</span>
           <span class="px-2">$</span>
           <span class="font-bold">{{ item.price * item.count }}</span>

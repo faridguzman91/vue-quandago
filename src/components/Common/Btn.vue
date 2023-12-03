@@ -3,7 +3,7 @@ defineProps(["label", "icon", "size"]);
 </script>
 
 <template>
-  <button class="btn outlined text-md h-full p-4">
+  <button class="outlined btn h-full p-4 text-md">
     <slot></slot>
   </button>
 </template>

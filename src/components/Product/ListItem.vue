@@ -8,9 +8,11 @@ const cartStore = useCartStore();
 </script>
 
 <template>
-  <li class="mt-8 p-8 w-full text-sm border">
-    <h1 class="text-sm capitalize font-bold">{{ product.title }}</h1>
-    <h2 class="text-xs mt-2">{{ product.description }}</h2>
+  <li
+    class="card card-body mt-8 w-full rounded-s border bg-base-100 p-8 text-sm shadow-lg"
+  >
+    <h1 class="text-sm font-bold capitalize">{{ product.title }}</h1>
+    <h2 class="mt-2 text-xs">{{ product.description }}</h2>
     <div class="text-lg font-bold">
       <div class="mt-4">
         <span>$</span>

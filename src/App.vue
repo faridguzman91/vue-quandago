@@ -5,13 +5,13 @@ import Nav from "./layouts/Nav.vue";
 <template>
   <div
     id="app-layout"
-    class="h-full max-w-bd-md mx-auto grid grid-rows-bd-base"
+    class="mx-auto grid h-full max-w-bd-md grid-rows-bd-base"
   >
     <Nav />
     <main class="h-full overflow-hidden">
       <div
         id="main-content-layout"
-        class="h-full flex justify-center items-center"
+        class="flex h-full items-center justify-center"
       >
         <router-view></router-view>
       </div>

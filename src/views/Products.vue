@@ -12,8 +12,10 @@ const productsStore = useProductsStore();
 const productsList = ref();
 const searchTxt = ref("");
 const url = ref(
-  `products/search?q=${searchTxt.value}&limit=${productsStore.products.limitPerPage
-  }&skip=${productsStore.products.currentPageNum * productsStore.products.limitPerPage
+  `products/search?q=${searchTxt.value}&limit=${
+    productsStore.products.limitPerPage
+  }&skip=${
+    productsStore.products.currentPageNum * productsStore.products.limitPerPage
   }`,
 );
 
@@ -34,9 +36,11 @@ const { isFetching, execute } = useBDaFetch(
 const searching = (txt: string) => {
   productsStore.resetProducts();
   searchTxt.value = txt;
-  url.value = `products/search?q=${searchTxt.value}&limit=${productsStore.products.limitPerPage
-    }&skip=${productsStore.products.currentPageNum * productsStore.products.limitPerPage
-    }`;
+  url.value = `products/search?q=${searchTxt.value}&limit=${
+    productsStore.products.limitPerPage
+  }&skip=${
+    productsStore.products.currentPageNum * productsStore.products.limitPerPage
+  }`;
   execute();
 };
 
@@ -53,30 +57,42 @@ useSimpleBar({
   callback: () => {
     if (isFetching.value || !productsStore.products.hasMore) return;
 
-    url.value = `products/search?q=${searchTxt.value}&limit=${productsStore.products.limitPerPage
-      }&skip=${productsStore.products.currentPageNum *
+    url.value = `products/search?q=${searchTxt.value}&limit=${
       productsStore.products.limitPerPage
-      }`;
+    }&skip=${
+      productsStore.products.currentPageNum *
+      productsStore.products.limitPerPage
+    }`;
     execute();
   },
 });
 </script>
 
 <template>
-  <div class="max-w-bd-md mx-auto relative py-2 px-6 h-full w-full grid items-center overflow-auto" ref="productsList">
+  <div
+    class="relative mx-auto grid h-full w-full max-w-bd-md items-center overflow-auto px-6 py-2"
+    ref="productsList"
+  >
     <SearchInput
-      class="w-full p-2 border-2 border-primary dark:border-primary-dark rounded-xl text-sm text-secondary dark:text-white placeholder:text-secondary dark:placeholder:text-white bg-primary-bg dark:bg-primary-bg-dark self-end"
-      @searching="searching($event)" />
-    <ul class="h-full w-full flex flex-col justify-start items-center">
-      <ListItem v-for="product of productsStore.products.items" :key="product.id" :product="product" />
+      class="dark:border-primary-dark bg-primary-bg dark:bg-primary-bg-dark w-full self-end rounded-xl border-2 border-primary p-2 text-sm text-secondary placeholder:text-secondary dark:text-white dark:placeholder:text-white"
+      @searching="searching($event)"
+    />
+    <ul class="flex h-full w-full flex-col items-center justify-start">
+      <ListItem
+        v-for="product of productsStore.products.items"
+        :key="product.id"
+        :product="product"
+      />
       <li v-if="isFetching && productsStore.products.hasMore">
-        <div id="spinner-box" class="overflow-hidden mt-4 text-lg">
+        <div id="spinner-box" class="mt-4 overflow-hidden text-lg">
           <span className="loading loading-bars loading-lg"></span>
         </div>
       </li>
-      <li class="text-xs text-secondary dark:text-white font-ssp font-bold mt-4"
-        v-else-if="!isFetching && productsStore.products.items.length === 0">
-        Nothing found.. please try again
+      <li
+        class="font-ssp mt-4 text-xs font-bold text-secondary dark:text-white"
+        v-else-if="!isFetching && productsStore.products.items.length === 0"
+      >
+        <h1 class="m-4 p-2 text-lg">Nothing found.. please try again</h1>
       </li>
     </ul>
     <Cart />

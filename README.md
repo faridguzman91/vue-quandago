@@ -13,14 +13,15 @@
 
 #installation
 
-make sure you got node.js and npm installed on your pc, unzip or clone into folder, cd into folder and run 
+make sure you got node.js and npm installed on your pc, unzip or clone into folder, cd into folder and run
 in a terminal:
 
 ```
 npm i && npm run dev
 ```
 
-for building run 
+for building run
+
 ```
 npm run build
 ```

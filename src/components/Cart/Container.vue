@@ -9,7 +9,7 @@ const toggleCart = ref(false);
 </script>
 
 <template>
-  <div class="sticky flex flex-row justify-end bottom-0 z-10 p-4 pb-20">
+  <div class="sticky bottom-0 z-10 flex flex-row justify-end p-4 pb-20">
     <ToggleBtn
       @click="toggleCart = true"
       :total-items="cartStore.totalItems"
@@ -22,4 +22,3 @@ const toggleCart = ref(false);
     />
   </div>
 </template>
-

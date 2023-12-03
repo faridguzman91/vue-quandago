@@ -1,12 +1,13 @@
 import { onMounted, onBeforeUnmount } from "vue";
 import type { IUseSimpleBarOptions } from "./types";
 
-export function useSimpleBar({ elementRef, callback = null }: IUseSimpleBarOptions) : any {
-
+export function useSimpleBar({
+  elementRef,
+  callback = null,
+}: IUseSimpleBarOptions): any {
   let scrollerObj: any | null = null;
   const onScrollEvent = (e: Event) => {
-
-    const target = e.target as HTMLElement
+    const target = e.target as HTMLElement;
     if (
       Math.floor(target.scrollTop) + Math.floor(target.clientHeight) + 150 >
       Math.floor(target.scrollHeight)
@@ -19,6 +20,7 @@ export function useSimpleBar({ elementRef, callback = null }: IUseSimpleBarOptio
 
   onMounted(() => {
     if (elementRef.value) {
+      // @ts-nocheck
       scrollerObj = new SimpleBar(elementRef.value);
 
       if (callback) {

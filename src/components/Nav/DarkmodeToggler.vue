@@ -1,9 +1,9 @@
 <template>
   <div
     id="darkmode-toggler"
-    class="px-4 mx-4 h-full border border-secondary dark:border-primary-dark flex justify-start items-center rounded-xl"
+    class="dark:border-primary-dark mx-4 flex h-full items-center justify-start rounded-xl border border-secondary px-4"
   >
-    <div class="px-2 flex items-center flex-col text-sm">
+    <div class="flex flex-col items-center px-2 text-sm">
       <label class="swap swap-rotate">
         <input
           type="checkbox"
@@ -14,7 +14,7 @@
         />
         <!-- sun icon -->
         <svg
-          class="swap-on fill-current w-10 h-10"
+          class="swap-on h-10 w-10 fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -24,7 +24,7 @@
         </svg>
         <!-- moon icon -->
         <svg
-          class="swap-off fill-current w-10 h-10"
+          class="swap-off h-10 w-10 fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
