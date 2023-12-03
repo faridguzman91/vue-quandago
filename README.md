@@ -19,3 +19,8 @@ in a terminal:
 ```
 npm i && npm run dev
 ```
+
+for building run 
+```
+npm run build
+```
