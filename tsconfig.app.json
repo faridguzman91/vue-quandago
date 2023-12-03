@@ -33,7 +33,6 @@
       "src/types"
     ],
     "strictNullChecks": false,
-    "extends": "@vue/tsconfig/tsconfig.json",
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
